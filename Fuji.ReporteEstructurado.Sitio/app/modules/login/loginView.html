@@ -1,0 +1,41 @@
+﻿<md-content layout="row" layout-align="center" style="background-size: cover; ">
+    <md-card style="max-width:400px;">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span>Ingresar</span>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-progress-linear class="md-warn" ng-if="loading" md-mode="indeterminate"></md-progress-linear>
+        <md-card-title style="background: url('app/assets/bk.PNG') ; background-size: cover;">
+            <md-card-title-text flex="initial">
+                <div>
+                    <form style="min-width:280px; min-height:280px;">
+                        <md-input-container class="md-icon-float md-block" flex>
+                            <label>Usuario</label>
+                            <md-icon class="name fa fa-envelope fa-2x green"></md-icon>
+                            <input ng-model="request.vchEmail" type="email" ng-disabled="loading" name="vchEmail" required>
+                            <!--<div ng-messages="FormularioLogin.vchEmail.$error" ng-if="FormularioUsuario.vchEmail.$touched">
+                                <div ng-message="required">Especificar un correo registrado</div>
+                            </div>-->
+                        </md-input-container>
+                        <md-input-container class="md-icon-float md-block" flex>
+                            <label>Contraseña</label>
+                            <md-icon class="name fa fa-lock fa-2x green"></md-icon>
+                            <input ng-model="request.password" type="password" ng-disabled="loading" name="password" required>
+                            <!--<div ng-messages="FormularioLogin.password.$error" ng-if="FormularioUsuario.password.$touched">
+                                <div ng-message="required">Especificar una contraseña</div>
+                            </div>-->
+                        </md-input-container>
+                        <div layout="column" layout-align="center center">
+                            <div layout="row">
+                                <md-button class="md-raised md-primary" ng-click="Ingresar(request, $event)" type="submit" ng-disabled="loading">Ingresar</md-button>
+                            </div>
+                            <a href="" ng-click="RecuperarCredenciales($event)" style="margin-top:10px; color:darkgreen" ng-if="!loading">¿Olvidó su contraseña?</a>
+                        </div>
+                    </form>
+                </div>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+</md-content>

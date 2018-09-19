@@ -1,0 +1,56 @@
+﻿<div ng-controller="homeController" layout="row" layout-align="center center">
+    <div show-gt-xs hide-xs>
+        <span style="font-family: 'Khula', sans-serif; font-size:18px;">{{Globals.CurrentUser.vchNombre}}</span>
+    </div>
+    <md-menu>
+        <md-button aria-label="menu-home" class="md-icon-button" ng-click="openMenu($mdOpenMenu, $event)">
+            <md-icon md-menu-origin class="fa fa-user fa-2x"></md-icon>
+        </md-button>
+        <md-menu-content width="3">
+            <md-menu-item>
+                <md-button href="#/home">
+                    <md-icon class="fa fa-home fa-2x" md-menu-align-target></md-icon>
+                    Home
+                </md-button>
+            </md-menu-item>
+            <md-menu-divider></md-menu-divider>
+            <!--<md-menu-item>
+                <md-button href="#/estudios">
+                    <md-icon class="fa fa-medkit fa-2x" md-menu-align-target></md-icon>
+                    Estudios
+                </md-button>
+            </md-menu-item>-->
+            <md-menu-item ng-if="Globals.CurrentUser.intTipoUsuarioID === 1">
+                <md-button ng-click="AdministrarUsuarios($event)">
+                    <md-icon class="fa fa-users fa-2x" md-menu-align-target></md-icon>
+                    Administrar usuarios
+                </md-button>
+            </md-menu-item>
+            <md-menu-item ng-if="Globals.CurrentUser.intTipoUsuarioID === 1 || Globals.CurrentUser.intTipoUsuarioID === 2">
+                <md-button ng-click="AdministrarOrdenesPago($event)">
+                    <md-icon class="fa fa-money fa-2x" md-menu-align-target></md-icon>
+                    Administrar Ordenes de Pago
+                </md-button>
+            </md-menu-item>
+            <!--<md-menu-item ng-if="Globals.CurrentUser.intTipoUsuarioID === 1">
+                <md-button ng-click="AdministrarJornadas($event)">
+                    <md-icon class="fa fa-trophy fa-2x" md-menu-align-target></md-icon>
+                    Administrar Jornadas
+                </md-button>
+            </md-menu-item>-->
+            <md-menu-item>
+                <md-button ng-click="EditarUsuario($event)">
+                    <md-icon class="fa fa-wrench fa-2x" md-menu-align-target></md-icon>
+                    Editar usuario
+                </md-button>
+            </md-menu-item>
+            
+            <md-menu-item>
+                <md-button href="#/login">
+                    <md-icon class="fa fa-sign-out fa-2x" md-menu-align-target></md-icon>
+                    Salir
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>

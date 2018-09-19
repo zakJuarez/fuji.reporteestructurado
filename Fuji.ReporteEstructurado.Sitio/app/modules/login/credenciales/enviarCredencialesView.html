@@ -1,0 +1,37 @@
+﻿<md-content layout="row" layout-align="center" style="background-size: cover; ">
+    <md-card flex="80">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span>Enviar credenciales para recuperación</span>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-progress-linear class="md-warn" ng-if="loading" md-mode="indeterminate"></md-progress-linear>
+        <md-card-title style="background: url('app/assets/FFM.png') ; background-size: cover;" layout="column" layout-align="space-around stretch">
+            <md-card-title-text flex="initial" layout="column" layout-align="space-around center">
+                <div layout-padding>
+                    <div layout-padding>
+                        <span>Favor de ingresar el correo electrónico con el que está dado de alta en el sistema</span>
+                    </div>
+                    <form layout="column" layout-align="space-around stretch" name="enviarCredencialesForm">
+                        <md-input-container class="md-icon-float">
+                            <label>Correo electrónico</label>
+                            <md-icon class="name fa fa-envelope-o fa-2x green"></md-icon>
+                            <input name="mail" ng-model="request.mail" type="email" ng-disabled="loading" required>
+                            <div ng-messages="enviarCredencialesForm.mail.$error" ng-if="enviarCredencialesForm.mail.$touched">
+                                <div ng-message="email">No es un correo electrónico válido</div>
+                                <div ng-message="required">Es necesario ingresar el correo electrónico</div>
+                            </div>
+                        </md-input-container>
+                        <div layout="column" layout-align="center center">
+                            <div layout="row">
+                                <md-button class="md-raised" href="#/login" ng-disabled="loading">Regresar</md-button>
+                                <md-button class="md-raised md-primary" ng-click="EnviarCredenciales(request, $event)" type="submit" ng-disabled="loading || enviarCredencialesForm.$invalid">Enviar credenciales</md-button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </md-card-title-text>
+        </md-card-title>
+    </md-card>
+</md-content>

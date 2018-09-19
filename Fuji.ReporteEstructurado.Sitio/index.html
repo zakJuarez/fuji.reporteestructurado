@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Admin. de Licencias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="app/assets/Favicon.ico" type="image/ico" />
+    <link href="app/styles/angular-material.min.css" rel="stylesheet" />
+    <link href="app/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="app/styles/Roboto.css" rel="stylesheet" />
+    <link href="app/styles/Khula.css" rel="stylesheet" />
+    <script src="app/scripts/fontawesome4.js"></script>
+    <link href="app/styles/flexboxes.css" rel="stylesheet" />
+    <link href="app/styles/StructuredReport.css" rel="stylesheet" />
+</head>
+<body ng-app="StructuredReport" ng-cloak>
+    <header>
+        <md-toolbar layout="column">
+            <div layout="row" layout-align="space-between center">
+                <img src="app/assets/logo.png" style="height:40px; width:auto; margin: 10px 10px 0 10px;" title="Reporte Estructurado">
+                <div layout-padding show-gt-lg hide-sm hide-xs hide-gt-xs show-md show-gt-md><span style="font-family: 'Khula', sans-serif;">Reporte Estructurado "Kotoba"</span></div>
+                <div ng-include="'app/modules/home/menu.html'"></div>
+            </div>
+        </md-toolbar>
+    </header>
+
+    <div id="mainContainer" ng-view></div>
+
+    <script src="app/scripts/jquery-3.2.1.min.js"></script>
+    <script src="app/scripts/bootstrap.min.js"></script>
+    <script src="app/scripts/moment.js"></script>
+
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="app/scripts/angular.min.js"></script>
+    <script src="app/scripts/angular-locale_es-mx.min.js"></script>
+    <script src="app/scripts/angular-animate.min.js"></script>
+    <script src="app/scripts/angular-aria.min.js"></script>
+    <script src="app/scripts/angular-messages.min.js"></script>
+    <script src="app/scripts/angular-route.min.js"></script>
+    <script src="app/scripts/angular-cookies.min.js"></script>
+    <script src="app/scripts/angular-sanitize.js"></script>
+    <script src="app/scripts/angular-idle.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="app/scripts/angular-material.min.js"></script>
+    <script src="app/scripts/ui-bootstrap-tpls.min.js"></script>
+
+    <!-- Sitio -->
+    <script src="app/scripts/download.js"></script>
+    <script src="app/StructuredReport.js"></script>
+    <script src="app/scripts/jszip.js"></script>
+    <script src="app/scripts/xlsx.js"></script>
+    <script src="app/modules/login/loginController.js"></script>
+    <script src="app/modules/login/loginServices.js"></script>
+    <script src="app/modules/login/credenciales/enviarCredencialesController.js"></script>
+    <script src="app/modules/login/credenciales/recuperarCredencialesController.js"></script>
+    <script src="app/modules/home/homeController.js"></script>
+    <script src="app/modules/home/homeServices.js"></script>
+    
+    <script>
+        function resizeIframe(obj) {
+            obj.style.height = (document.body.offsetHeight - 110) + 'px';
+        }
+    </script>
+
+</body>
+</html>

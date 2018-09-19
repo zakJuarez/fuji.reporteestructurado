@@ -1,0 +1,45 @@
+﻿<div style="background: url('app/assets/FFM.png'); background-size: cover;">
+    <div class="container">
+        <div id="passwordreset" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <div class="panel-title">Actualizar contraseña</div>
+                </div>
+                <md-progress-linear class="md-warn" ng-if="loading" md-mode="indeterminate"></md-progress-linear>
+                <div class="panel-body">
+                    <form id="signupform" class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="email" class=" control-label col-sm-5">Usuario</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" name="username" placeholder="usuario" ng-model="usuario.vchNombre" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class=" control-label col-sm-5">Nueva contraseña</label>
+                            <div class="col-sm-7">
+                                <input type="password" class="form-control" name="password" placeholder="nueva contraseña" ng-model="usuario.new_password" ng-disabled="loading">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class=" control-label col-sm-5">Confirmar nueva contraseña</label>
+                            <div class="col-sm-7">
+                                <input type="password" class="form-control" name="password_confirmation" placeholder="confirme su nueva contraseña" ng-model="new_password" ng-disabled="loading">
+                            </div>
+                        </div>
+                        <div class="form-group" ng-if="usuario.new_password !== new_password && usuario.new_password !== ''">
+                            <blockquote class="col-sm-offset-1">
+                                <p style="color:orangered">Las contraseñas no coinciden</p>
+                            </blockquote>
+                        </div>
+                        <div class="form-group">
+                            <!-- Button -->
+                            <div class="col-sm-offset-5 col-sm-9">
+                                <button id="btn-signup" type="button" class="btn btn-success" ng-click="ModificarPassword($event)" ng-disabled="(usuario.new_password !== new_password) || usuario.new_password === '' || loading">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
