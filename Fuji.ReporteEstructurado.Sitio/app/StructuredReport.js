@@ -9,7 +9,8 @@ angular.module('StructuredReport', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngCo
             .backgroundPalette('grey', {
                 'default': '200'
             })
-            .primaryPalette('teal');
+            .primaryPalette('teal')
+            .accentPalette('green');
     })
     .config(function ($mdDateLocaleProvider) {
         $mdDateLocaleProvider.months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',

@@ -19,7 +19,7 @@
             <div layout="row" layout-align="space-between center">
                 <img src="app/assets/logo.png" style="height:40px; width:auto; margin: 10px 10px 0 10px;" title="Reporte Estructurado">
                 <div layout-padding show-gt-lg hide-sm hide-xs hide-gt-xs show-md show-gt-md><span style="font-family: 'Khula', sans-serif;">Reporte Estructurado "Kotoba"</span></div>
-                <div ng-include="'app/modules/home/menu.html'"></div>
+                <div  ng-if="logeado"  ng-include="'app/modules/home/menu.html'"></div>
             </div>
         </md-toolbar>
     </header>
